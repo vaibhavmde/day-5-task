@@ -186,6 +186,37 @@ Answer/code  */
 
 Answer/code  */
 
+var rotate=function(arr,k){                //using anonymous function
+    var temp=[];                              // creating empty array
+                                               
+    for(i=arr.length-k;i<arr.length;i++){        // for loop to rotate the (array.length-k) element
+        temp.push(arr[i]);                        //pushing i in temp
+    }
+                  
+    for(i=0;i<arr.length-k;i++){                //for loop to rotate the starting elements in array
+        temp.push(arr[i])                          //pushing i in temp
+    }
+    
+    console.log(temp.join(" "));                  // printing temp
+    
+};rotate([1,2,3,4,5],2);
+//output 4 5 1 2 3
+
+(function(arr,k){                                //using IFFE function
+    var temp=[];
+    
+    for(i=arr.length-k;i<arr.length;i++){
+        temp.push(arr[i]);
+    }
+    
+    for(i=0;i<arr.length-k;i++){
+        temp.push(arr[i])
+    }
+    
+    console.log(temp.join(" "));
+    
+})([1,2,3,4,5],3);
+//output 3 4 5 1 2
 
 /* Question 3
 Do the below programs in arrow functions
@@ -263,7 +294,6 @@ var palindrome=(arr) => {                  //using anonymous function
     }console.log(pal);
 }; palindrome(["madam",101,"tarat",123,"dope",121,151]);
 //output [ 'madam', 101, 'tarat', 121, 151 ]
-
 
 
 
